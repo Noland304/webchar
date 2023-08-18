@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>กราฟแสดงข้อมูลส่วนตัว</h1>
+    </header>
+        <div class="div1">
+            <img src="vv - Copy.jpg" class="profile">
+        </div>
+        
+    
+
+    <div class="div2">
+        <canvas id="myChart"></canvas>
+      </div>
+      
+      <div class="div5">
+        <canvas id="myChart1"></canvas>
+      </div>
+      
+      <div class="div8">
+        นาย กัมปนาท กันทะยอด <br>
+        รหัสนักศึกษา 6504101304 <br>
+        เบอร์โทรศัพท์ 0986750521
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ['มกราคม', 'กุมพาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'],
+              datasets: [{
+                  label: 'รายจ่ายแต่ละเดือนของผม',
+                  data: [8000, 10000, 9566, 9558, 12333, 7255, 8524, 10050, 7202 ,5000, 10000, 12050],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              plugins: {
+                  title: {
+                      display: true,
+                      text: 'กราฟรายจ่ายแต่ละเดือนของผม',
+                  }
+              },
+              scales: {
+                  y: {
+                      beginAtZero: true
+                  }
+              }
+          }
+      });
+
+        const nnn = document.getElementById('myChart1');
+      
+        new Chart(nnn, {
+          type: 'doughnut',
+          data: {
+              labels: ['เรียน', 'พักผ่อน', 'กิน', 'เล่นเกม'],
+              datasets: [{
+                  label: 'การใช้ชีวิตประจำวัน',
+                  data: [60, 10, 10, 20], 
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              plugins: {
+                  title: {
+                      display: true,
+                      text: 'การใช้ชีวิตประจำวัน',
+                  }
+              }
+          }
+      });
+
+      
+      </script>
+      
+
+</body>
+</html>
+
+<style>
+.div5{
+  width: 350px; /* ปรับความกว้าง*/
+  height: 350px; /* ปรับความสูง*/
+}
+
+.div2{
+  width: 500px;
+  height: 500px;
+   position: absolute;
+ left: 35%;
+
+}
+.profile{
+    width: 300px;
+    height: 300px;
+    
+}
+.div1{
+    text-align: center;
+}
+
+header{
+    background-color: rgb(238, 85, 85);
+    text-align: center;
+}
+
+body{
+    background-color: rgb(194, 245, 231);
+}
+
+.div8{
+    background-color: rgb(159, 210, 255);
+    position:absolute;
+    left: 80%;
+}
+</style>
